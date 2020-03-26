@@ -1,0 +1,64 @@
+package Ass26;
+import java.io.PipedInputStream;
+import java.nio.file.Files;
+import java.util.Scanner;
+public class StudentDetails {
+	public String name[][] = new String[10][10];
+    void getDetails(int n)
+     {
+        Scanner get = new Scanner(System.in);
+        int limit=n;
+        System.out.println("Enter Student Details\n");
+        for(int i=0;i<limit;i++)
+        {
+            System.out.println("=======================");
+            for(int j=0;j<3;j++)
+            {
+                name[i][j] = get.nextLine();
+            }
+        }         
+        display(limit);
+    } 
+    void display(int limit)
+    {
+        System.out.println("Student Name"+"\t"+"Roll"+"\t\t"+"Marks");
+        for(int i=0;i<limit;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                System.out.print(name[i][j]+"\t\t");
+            }
+        System.out.println();
+        }
+    }  
+	public static void main(String args[]) 
+    {   
+        Scanner sc =  new Scanner(System.in);
+        System.out.print("Enter Number of Students:");
+        int n =nextInt();
+       StudentDetails std = new StudentDetails();
+        std.getDetails(n);
+ 
+             
+            PipedInputStream output = new PipedInputStream();
+             System.out.println(" ");
+             System.out.print("Kesav"+"\t\t"+"25"+"\t\t"+"99");
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<3;j++)
+                {
+                   System.out.println(std.name[i][j]+"\t\t");
+                }
+             System.out.println();
+             System.out.print("====================");
+            }
+             System.out.println();
+ 
+    }
+
+	private static int nextInt() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
